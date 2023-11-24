@@ -11,6 +11,9 @@
             "*": ["node_modules/*"]
         }
     },
-    "include": ["src/**/*.ts"], // Update the include path to include TypeScript files
+    "include": [
+        "./api/*.ts",
+        "src/**/*.ts"
+        ], // Update the include path to include TypeScript files
     "exclude": ["dist"] // Exclude the 'dist' directory from compilation
 }

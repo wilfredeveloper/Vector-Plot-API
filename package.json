@@ -5,6 +5,7 @@
     "main": "index.js",
     "scripts": {
         "build": "tsc --project ./",
+        "vercel-build": "echo Hello Vector-Plot-API",
         "start:dev": "nodemon src/server.ts",
         "start:prod": "node dist/server.js"
     },
