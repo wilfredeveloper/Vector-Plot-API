@@ -30,47 +30,33 @@ function drawDDALine(x1: number, y1: number, x2: number, y2: number, resultBuffe
     return resultBuffer;
 }
 
-function drawBresenhamLine(x1: number, y1: number, x2: number, y2: number, resultBuffer: Buffer): void {
-    resultBuffer = Buffer.alloc(0);
-
+function drawBresenhamLine(x1: number, y1: number, x2: number, y2: number): Buffer {
     let dx = Math.abs(x2 - x1);
     let dy = Math.abs(y2 - y1);
-    let sx = x1 < x2 ? 1 : -1;
-    let sy = y1 < y2 ? 1 : -1;
+
+    let sx = (x1 < x2) ? 1 : -1;
+    let sy = (y1 < y2) ? 1 : -1;
 
     let err = dx - dy;
 
-    // Store the initial coordinates
-    resultBuffer.writeInt32LE(x1, 0);
-    resultBuffer.writeInt32LE(y1, 4);
+    let coordinates = [];
 
-    let offset = 8;
+    while(true){
+        coordinates.push({x: x1, y: y1});
 
-    while (x1 !== x2 || y1 !== y2) {
-        if (offset + 8 > resultBuffer.length) {
-            // Resize the buffer if it's not large enough
-            const newBuffer = Buffer.alloc(resultBuffer.length * 2);
-            resultBuffer.copy(newBuffer);
-            resultBuffer = newBuffer;
-        }
-
-        let err2 = 2 * err;
-
-        if (err2 > -dy) {
-            err -= dy;
-            x1 += sx;
-        }
-
-        if (err2 < dx) {
-            err += dx;
-            y1 += sy;
-        }
-
-        // Store the coordinates in the buffer
-        resultBuffer.writeInt32LE(x1, offset);
-        resultBuffer.writeInt32LE(y1, offset + 4);
-        offset += 8;
+        if ((x1 == x2) && (y1 == y2)) break;
+        let e2 = 2*err;
+        if (e2 > -dy) { err -= dy; x1  += sx; }
+        if (e2 < dx) { err += dx; y1  += sy; }
     }
+
+    let resultBuffer = Buffer.alloc(coordinates.length * 8);
+    for (let i = 0; i < coordinates.length; i++) {
+        resultBuffer.writeInt32LE(coordinates[i].x, i * 8);
+        resultBuffer.writeInt32LE(coordinates[i].y, i * 8 + 4);
+    }
+
+    return resultBuffer;
 }
 
 export { drawDDALine, drawBresenhamLine, Result };
