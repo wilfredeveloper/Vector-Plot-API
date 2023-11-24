@@ -1,6 +1,6 @@
 import './index.css'
 import ContentCopyIcon from '/copy-icon.svg';
-import React, { useState } from 'react'
+import { useState } from 'react'
 import Header from './components/header/header'
 import RoundedBtn from './components/roundedBtn/roundedBtn'
 import Instruction from './components/instruction/instruction'
@@ -8,11 +8,12 @@ import Link from './components/Link/Link'
 
 function App() {
   const dummyData = { x1 : 10, y1 : 20, x2 : 40, y2 : 60 };
-  const [textToCopy, setTextToCopy] = useState('https://vector-plot-api.vercel.app/DDA');
+  //  @ts-ignore
+  const [textToCopy, setTextToCopy] = useState('text to copy');
 
-  const handleCopy = async (text: String) => {
+  const handleCopy = async (text: string) => {
     try {
-      await navigator.clipboard.writeText(textToCopy);
+      await navigator.clipboard.writeText(text);
       console.log('Text copied to clipboard');
     } catch (err) {
       console.error('Failed to copy text: ', err);
@@ -107,8 +108,3 @@ function App() {
 }
 
 export default App
-
-/* TODO: Add a footer
-        Fix the copy icon functionality
-        add a divider
-*/
