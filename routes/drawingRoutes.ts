@@ -7,7 +7,7 @@ import { drawDDALine, drawBresenhamLine, drawLine } from '../controllers/drawing
 const router = express.Router();
 
 // Serve static files from the "Vector-Plot-API-homepage" directory
-router.use(express.static(path.join(__dirname, '../Vector-Plot-API-homepage/dist')));
+router.use(express.static(path.join(__dirname, '../public')));
 
 router.get('/', (req: Request, res: Response) => {
     // Redirect to the static site
