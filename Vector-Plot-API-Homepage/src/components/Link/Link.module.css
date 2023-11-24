@@ -1,0 +1,19 @@
+.Link_wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.arrow {
+    margin-left: .5rem;
+    width: .75rem;
+    height: .75rem;
+}
+
+.link {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    margin: .95rem 0;
+    font-size: small;
+}
