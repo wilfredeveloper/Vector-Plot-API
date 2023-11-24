@@ -4,19 +4,20 @@ interface Result {
     y: number;
 }
 
-function drawDDALine(x1: number, y1: number, x2: number, y2: number, resultBuffer: Buffer): void {
-    resultBuffer = Buffer.alloc(0);
-
+function drawDDALine(x1: number, y1: number, x2: number, y2: number, resultBuffer: Buffer): Buffer {
+    
     let dx = x2 - x1;
     let dy = y2 - y1;
-
+    
     let steps = Math.max(Math.abs(dx), Math.abs(dy));
-
+    
     let xIncrement = dx / steps;
     let yIncrement = dy / steps;
-
+    
     let x = x1,
-        y = y1;
+    y = y1;
+    
+    resultBuffer = Buffer.alloc(8 * steps);
 
     // Store the coordinates in the buffer
     for (let k = 0; k < steps; k++) {
@@ -25,6 +26,8 @@ function drawDDALine(x1: number, y1: number, x2: number, y2: number, resultBuffe
         x += xIncrement;
         y += yIncrement;
     }
+
+    return resultBuffer;
 }
 
 function drawBresenhamLine(x1: number, y1: number, x2: number, y2: number, resultBuffer: Buffer): void {
