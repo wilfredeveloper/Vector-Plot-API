@@ -14,7 +14,7 @@ router.get('/', (req: Request, res: Response) => {
     res.redirect('/index.html');
 });
 
-router.post('/DDA', (req: Request, res: Response) => drawLine(req, res, drawDDALine));
-router.post('/bresenham', (req: Request, res: Response) => drawLine(req, res, drawBresenhamLine));
+router.post('/api/DDA', (req: Request, res: Response) => drawLine(req, res, drawDDALine));
+router.post('/api/bresenham', (req: Request, res: Response) => drawLine(req, res, drawBresenhamLine));
 
 export default router;
