@@ -1,5 +1,5 @@
-import HeaderStyles from "./header.module.css"
 import profileURL from "/profile.png"
+import HeaderStyles from "./header.module.css"
 import twitterLogo from "/twitter-logo.png"
 import GitHubLogo from "/Github-logo.png"
 

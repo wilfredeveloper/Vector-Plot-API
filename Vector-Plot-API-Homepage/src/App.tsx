@@ -21,10 +21,12 @@ function App() {
   };
   return (
     <main>
+      <div className="head-section">
       <Header />
       <div className='Main_Heading'>
         <h1 className={"project_name"}>VECTOR PLOT API</h1>
         < RoundedBtn text='Give a ⭐ on GitHub'/>
+      </div>
       </div>
 
       <div className="text-group">
@@ -43,6 +45,7 @@ function App() {
         <p>At the moment, it contains only 2 algorithms</p>
       </div>
 
+      <div className="instructions-group">
       <div className="text-group-algo">
         <h4 className="algo">Digital Difference Analyzer</h4>
         <Instruction text='open postman or any API client of your choice'/>
@@ -89,6 +92,7 @@ function App() {
         </Instruction>
         <Instruction text='open postman or any API client of your choiceChange the HTTP request to POST and hit send'/>
         
+      </div>
       </div>
 
       <h3 className='footer-heading'>THANK YOU FOR VISITING</h3>
