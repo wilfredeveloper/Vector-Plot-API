@@ -11,9 +11,9 @@
 
 main {
     background-color: #131313;
-    padding: 3rem 2.5rem;
+    padding: 3rem 4.5rem;
     /* height: 100vh; */
-    width: 100vw;
+    /* width: 100vw; */
 }
 
 .Main_Heading h1 {
@@ -82,4 +82,37 @@ p {
 .content-copy-icon {
     width: 1rem;
     height: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+    .head-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem;
+        margin-bottom: 3rem;
+        position: relative;
+    }
+    .head-section::after {
+        content: "";
+        position: absolute;
+        bottom: -1rem;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: #ffffff28;
+    }
+    .Main_Heading {
+        margin-right: 15rem;
+    }
+    .Main_Heading h1 {
+        font-size: 4rem;
+    }
+    .instructions-group {
+        display: flex;
+        justify-content: space-between;
+    }
+    .text-group-algo:first-child {
+        margin-right: 2rem;
+    }
 }

@@ -7,9 +7,9 @@
     padding-inline: 2rem;
     justify-content: space-between;
     align-items: center;
-    background-color: #FFB800;
     border-radius: .75rem;
     padding: .5rem .75rem;
+    background-color: #FFB800;
 }
 
 .profile_photo_wrapper {
@@ -58,4 +58,25 @@
     width: 1.25rem;
     height: 1.25rem;
     margin-right: .75rem;
+}
+
+@media screen and (min-width: 768px) {
+    .profile_pane {
+        background-color: transparent;
+        padding: 0;
+    }
+    .profile_photo_wrapper {
+        background-color: #FFB800;
+        padding: 1rem;
+        border-radius: .75rem;
+        margin: 1.5rem;
+    }
+    .profile_details {
+        border-radius: .5rem;
+        width: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+    }
 }
