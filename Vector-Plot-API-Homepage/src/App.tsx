@@ -53,7 +53,7 @@ function App() {
           <br />
           <br />
         <div className='highlight'>
-        <span>https://vector-plot-api.vercel.app/DDA </span>
+        <span>https://vector-plot-api.vercel.app/api/DDA </span>
         <img src={ContentCopyIcon} alt="content copy icon" className='content-copy-icon' onClick={() => handleCopy('https://vector-plot-api.vercel.app/DDA')}/>
         </div>
         </Instruction>
@@ -78,7 +78,7 @@ function App() {
           <br />
           <br />
         <div className='highlight'>
-        <span>https://vector-plot-api.vercel.app/bresenham</span>
+        <span>https://vector-plot-api.vercel.app/api/bresenham</span>
         <img src={ContentCopyIcon} alt="content copy icon" className='content-copy-icon'onClick={() => handleCopy('https://vector-plot-api.vercel.app/bresenham')}/>
         </div>
         </Instruction>
